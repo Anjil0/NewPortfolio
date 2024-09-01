@@ -1,0 +1,2 @@
+React Setup installation
+npm i react-parallax-tilt framer-motion react-router-dom @emailjs/browser @react-three/fiber @react-three/drei maath react-vertical-timeline-component
