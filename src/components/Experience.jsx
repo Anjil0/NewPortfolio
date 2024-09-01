@@ -1,3 +1,5 @@
+/* eslint-disable react-refresh/only-export-components */
+import PropTypes from "prop-types";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -51,6 +53,18 @@ const ExperienceCard = ({ experience }) => {
   );
 };
 
+// Prop validation for ExperienceCard component
+ExperienceCard.propTypes = {
+  experience: PropTypes.shape({
+    date: PropTypes.string.isRequired,
+    icon: PropTypes.string.isRequired,
+    iconBg: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    company_name: PropTypes.string.isRequired,
+    points: PropTypes.arrayOf(PropTypes.string).isRequired,
+  }).isRequired,
+};
+
 const Experience = () => {
   return (
     <>
@@ -73,5 +87,4 @@ const Experience = () => {
   );
 };
 
-// eslint-disable-next-line react-refresh/only-export-components
 export default SectionWrapper(Experience, "work");

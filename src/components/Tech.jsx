@@ -1,8 +1,8 @@
+/* eslint-disable react-refresh/only-export-components */
 import { BallCanvas } from "./canvas";
 import SectionWrapper from "../hoc/sectionWrapper";
 import { technologies } from "../constants";
 
-// eslint-disable-next-line react-refresh/only-export-components
 const Tech = () => {
   return (
     <>
@@ -17,5 +17,4 @@ const Tech = () => {
   );
 };
 
-// eslint-disable-next-line react-refresh/only-export-components
 export default SectionWrapper(Tech, "tech");
