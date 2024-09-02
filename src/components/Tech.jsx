@@ -1,6 +1,6 @@
 /* eslint-disable react-refresh/only-export-components */
 import { BallCanvas } from "./canvas";
-import { SectionWrapper } from "../hoc/sectionWrapper";
+import SectionWrapper from "../hoc/sectionWrapper";
 import { technologies } from "../constants";
 
 const Tech = () => {
