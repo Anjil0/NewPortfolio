@@ -18,7 +18,7 @@ import reactjs from "./tech/reactjs.png";
 import redux from "./tech/redux.png";
 import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
-
+import iic from "./company/iic.png";
 import meta from "./company/meta.png";
 import shopify from "./company/shopify.png";
 import ingskill from "./company/ingskill.png";
@@ -50,6 +50,7 @@ export {
   tailwind,
   typescript,
   meta,
+  iic,
   shopify,
   carrent,
   jobit,
