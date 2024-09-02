@@ -168,26 +168,26 @@ const experiences = [
 const testimonials = [
   {
     testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-    name: "Sara Lee",
-    designation: "CFO",
-    company: "Acme Co",
+      "The platform is incredibly user-friendly and the design is visually appealing. I love how intuitive the navigation is, making it easy to find what I need quickly. It has significantly improved my workflow and productivity.",
+    name: "Ram Karki",
+    designation: "Frontend Developer",
+    company: "Ing Skill Academy",
     image: "https://randomuser.me/api/portraits/women/4.jpg",
   },
   {
     testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Rick does.",
-    name: "Chris Brown",
-    designation: "COO",
-    company: "DEF Corp",
+      "As a student, I found the resources extremely valuable. The content is detailed, and the interactive features make learning engaging. It has been an essential tool in helping me understand complex topics more clearly.",
+    name: "Arpan Karki",
+    designation: "Student",
+    company: "Itahari International College",
     image: "https://randomuser.me/api/portraits/men/5.jpg",
   },
   {
     testimonial:
-      "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-    name: "Lisa Wang",
-    designation: "CTO",
-    company: "456 Enterprises",
+      "Working with the team has been a fantastic experience. The platform’s educational tools are top-notch, and the attention to detail in each module is impressive. It’s a great resource for students and educators alike.",
+    name: "Anir Jung Thapa",
+    designation: "Teaching Assistant",
+    company: "Itahari International College",
     image: "https://randomuser.me/api/portraits/women/6.jpg",
   },
 ];
