@@ -1,11 +1,12 @@
 import { useState, useRef } from "react";
-import CanvasLoader from "./Loader";
 import { EarthCanvas } from "./canvas";
+import emailjs from "@emailjs/browser";
 import { styles } from "../style";
 import SectionWrapper from "../hoc/sectionWrapper";
 import { motion } from "framer-motion";
 import { slideIn } from "../utils/motion";
 
+// eslint-disable-next-line react-refresh/only-export-components
 const Contact = () => {
   const formRef = useRef();
   const [form, setForm] = useState({
@@ -20,10 +21,58 @@ const Contact = () => {
     setForm({ ...form, [name]: value });
   };
 
+  const userMessage = {
+    from_name: form.name,
+    to_name: "Anjil Neupane",
+    from_email: form.email,
+    to_email: "angilneupane222@gmail.com",
+    message: form.message,
+  };
+
+  const autoReply = {
+    to_name: form.name,
+    from_email: "angilneupane222@gmail.com",
+    from_name: "Anjil Neupane",
+    user_email: form.email,
+    reply_to: "angilneupane222@gmail.com",
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    setForm({ name: "", email: "", message: "" });
+    emailjs
+      .send(
+        "service_09cvhpn",
+        "template_3innc07",
+        userMessage,
+        "pz2YSRjJxlb0-NOJZ"
+      )
+      .then(
+        async () => {
+          setLoading(false);
+          try {
+            await emailjs.send(
+              "service_09cvhpn",
+              "template_s0twlcp",
+              autoReply,
+              "pz2YSRjJxlb0-NOJZ"
+            );
+          } catch (error) {
+            console.log("Auto-reply failed:", error);
+          }
+          setForm({ name: "", email: "", message: "" });
+          alert(
+            "Thank you for your message. I will get back to you as soon as possible."
+          );
+        },
+        (error) => {
+          setLoading(false);
+          console.log(error);
+          alert(
+            "Apologies, but there seems to be a problem. Please try again."
+          );
+        }
+      );
   };
 
   return (
