@@ -60,10 +60,9 @@ const Feedbacks = () => {
       >
         <motion.div variants={textVariant()}>
           <p className={styles.sectionSubText}>What others say</p>
-          <h2 className={`${styles.sectionHeadText}`}>Testimonials.</h2>
+          <h2 className={`${styles.sectionHeadText} mb-20`}>Testimonials.</h2>
         </motion.div>
-        {/* Fixed the padding and spacing issues */}
-        <div className={`${styles.padding} pb-14 flex flex-wrap gap-7`}>
+        <div className={`pb-14 flex flex-wrap gap-7`}>
           {testimonials.map((testimonial, index) => (
             <FeedbackCard
               key={`testimonial-${index}`}
