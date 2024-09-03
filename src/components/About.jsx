@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react-refresh/only-export-components */
 import PropTypes from "prop-types";
 import { Tilt } from "react-tilt";
@@ -45,15 +44,15 @@ const About = () => {
       </motion.div>
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
-        className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]"
+        className="mt-3 text-secondary text-[17px] text-justify max-w-3xl leading-[30px]"
       >
-        I'm a skilled software developer with experience in TypeScript and
-        JavaScript, and expertise in frameworks like React, Node.js, and
-        Three.js. I'm a quick learner and collaborate closely with clients to
-        create efficient, scalable, and user-friendly solutions that solve
-        complex problems.
+        I’m a dedicated student with hands-on experience in React and Node.js,
+        focusing on efficient and scalable web applications. My quick learning
+        and collaborative skills help me tackle complex challenges and deliver
+        impactful solutions. I am passionate about growing as a Full Stack
+        Developer, specializing in Node.js and React.js, and eager to embrace
+        new opportunities to solve real-world problems.
       </motion.p>
-
       <div className="mt-20 flex flex-wrap gap-10">
         {services.map((service, index) => (
           <ServiceCard key={service.title} index={index} {...service} />

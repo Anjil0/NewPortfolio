@@ -14,8 +14,8 @@
 }
 
 .hash-span {
-  margin-top: -100px;
-  padding-bottom: 100px;
+  margin-top: -50px;
+  padding-bottom: 50px;
   display: block;
 }
 
@@ -58,34 +58,17 @@
 }
 
 .green-text-gradient {
-  background: #11998e; 
-  background: -webkit-linear-gradient(
-    to top,
-    #11998e,
-    #38ef7d
-  ); 
-  background: linear-gradient(
-    to top,
-    #11998e,
-    #38ef7d
-  ); 
+  background: #11998e;
+  background: -webkit-linear-gradient(to top, #11998e, #38ef7d);
+  background: linear-gradient(to top, #11998e, #38ef7d);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .blue-text-gradient {
-
-  background: #56ccf2; 
-  background: -webkit-linear-gradient(
-    to top,
-    #2f80ed,
-    #56ccf2
-  ); 
-  background: linear-gradient(
-    to top,
-    #2f80ed,
-    #56ccf2
-  ); 
+  background: #56ccf2;
+  background: -webkit-linear-gradient(to top, #2f80ed, #56ccf2);
+  background: linear-gradient(to top, #2f80ed, #56ccf2);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

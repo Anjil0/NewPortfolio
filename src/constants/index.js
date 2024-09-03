@@ -3,6 +3,10 @@ import {
   backend,
   creator,
   web,
+  //work
+  ingskill,
+  iic,
+  //skillset
   javascript,
   html,
   css,
@@ -13,13 +17,10 @@ import {
   git,
   figma,
   docker,
-  meta,
-  ingskill,
-  iic,
-  shopify,
-  carrent,
-  jobit,
-  tripguide,
+  bonsaiGarden,
+  //projects
+  sonicpulse,
+  foodServe,
 } from "../assets";
 
 export const navLinks = [
@@ -30,6 +31,10 @@ export const navLinks = [
   {
     id: "work",
     title: "Work",
+  },
+  {
+    id: "works",
+    title: "Project",
   },
   {
     id: "contact",
@@ -127,38 +132,12 @@ const experiences = [
       "Engaged with participants, providing information and assistance to enhance their event experience.",
     ],
   },
-  {
-    title: "Web Developer",
-    company_name: "Shopify",
-    icon: shopify,
-    iconBg: "#383E56",
-    date: "Jul 2024 - Sep 2024",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-  {
-    title: "Full stack Developer",
-    company_name: "Meta",
-    icon: meta,
-    iconBg: "#E6DEDD",
-    date: "Jan 2023 - Present",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
 ];
 
 const testimonials = [
   {
     testimonial:
-      "The platform is incredibly user-friendly and the design is visually appealing. I love how intuitive the navigation is, making it easy to find what I need quickly. It has significantly improved my workflow and productivity.",
+      "He is passionate about new projects, always bringing fresh ideas and enthusiasm to the team. His dedication to learning and improving makes him a valuable team member.",
     name: "Ram Karki",
     designation: "Frontend Developer",
     company: "Ing Skill Academy",
@@ -166,7 +145,7 @@ const testimonials = [
   },
   {
     testimonial:
-      "As a student, I found the resources extremely valuable. The content is detailed, and the interactive features make learning engaging. It has been an essential tool in helping me understand complex topics more clearly.",
+      "As a junior student, I found him to be an excellent mentor who simplifies complex topics. His guidance and support have been essential to my learning journey.",
     name: "Arpan Karki",
     designation: "Student",
     company: "Itahari International College",
@@ -174,7 +153,7 @@ const testimonials = [
   },
   {
     testimonial:
-      "Working with the team has been a fantastic experience. The platform’s educational tools are top-notch, and the attention to detail in each module is impressive. It’s a great resource for students and educators alike.",
+      "Working with him on projects has been a fantastic experience due to his positivity and teamwork. He always contributes meaningfully, making collaboration enjoyable and highly productive.",
     name: "Anir Jung Thapa",
     designation: "Teaching Assistant",
     company: "Itahari International College",
@@ -184,66 +163,66 @@ const testimonials = [
 
 const projects = [
   {
-    name: "Car Rent",
+    name: "SonicPulse",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      "Web-based online store for headphones, featuring secure login, role-based access, and a user-friendly interface for browsing, ordering, and managing products.",
     tags: [
       {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "mongodb",
-        color: "green-text-gradient",
-      },
-      {
-        name: "tailwind",
+        name: "java",
         color: "pink-text-gradient",
       },
-    ],
-    image: carrent,
-    source_code_link: "https://github.com/",
-  },
-  {
-    name: "Job IT",
-    description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
-    tags: [
       {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "restapi",
+        name: "mysql",
         color: "green-text-gradient",
       },
       {
-        name: "scss",
+        name: "htmlcss",
+        color: "blue-text-gradient",
+      },
+    ],
+    image: sonicpulse,
+    source_code_link: "https://github.com/Anjil0/Java-Server-Page-and-Servlet",
+  },
+  {
+    name: "Food Serve",
+    description:
+      "It was my first project and is a basic canteen management web application where users can order food, delete orders, and manage their profiles.",
+    tags: [
+      {
+        name: "reactjs",
         color: "pink-text-gradient",
       },
-    ],
-    image: jobit,
-    source_code_link: "https://github.com/",
-  },
-  {
-    name: "Trip Guide",
-    description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
-    tags: [
       {
-        name: "nextjs",
+        name: "nodejs",
         color: "blue-text-gradient",
       },
       {
-        name: "supabase",
+        name: "mysql",
         color: "green-text-gradient",
+      },
+    ],
+    image: foodServe,
+    source_code_link: "https://github.com/Anjil0/SYP-Food-Serve",
+  },
+  {
+    name: "Bonsai Garden",
+    description:
+      "A user-friendly e-commerce website for bonsai plants, featuring product listings, discounts, and pages for home, blog, and research.",
+    tags: [
+      {
+        name: "html",
+        color: "blue-text-gradient",
       },
       {
         name: "css",
+        color: "green-text-gradient",
+      },
+      {
+        name: "js",
         color: "pink-text-gradient",
       },
     ],
-    image: tripguide,
+    image: bonsaiGarden,
     source_code_link: "https://github.com/",
   },
 ];
