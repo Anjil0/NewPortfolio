@@ -223,7 +223,7 @@ const projects = [
       },
     ],
     image: bonsaiGarden,
-    source_code_link: "https://github.com/",
+    source_code_link: "https://github.com/Anjil0/HTML-and-CSS-1st-Project",
   },
 ];
 
