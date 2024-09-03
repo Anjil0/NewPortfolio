@@ -138,10 +138,10 @@ const testimonials = [
   {
     testimonial:
       "He is passionate about new projects, always bringing fresh ideas and enthusiasm to the team. His dedication to learning and improving makes him a valuable team member.",
-    name: "Ram Karki",
-    designation: "Frontend Developer",
+    name: "Ram Pariyar",
+    designation: "Android Developer",
     company: "Ing Skill Academy",
-    image: "https://randomuser.me/api/portraits/women/4.jpg",
+    image: "https://i.postimg.cc/4ypJ0bKc/ram-Pariyar.png",
   },
   {
     testimonial:
@@ -149,7 +149,7 @@ const testimonials = [
     name: "Arpan Karki",
     designation: "Student",
     company: "Itahari International College",
-    image: "https://randomuser.me/api/portraits/men/5.jpg",
+    image: "https://i.postimg.cc/dVTdng6N/arpan-Karki.jpg",
   },
   {
     testimonial:
@@ -157,7 +157,7 @@ const testimonials = [
     name: "Anir Jung Thapa",
     designation: "Teaching Assistant",
     company: "Itahari International College",
-    image: "https://randomuser.me/api/portraits/women/6.jpg",
+    image: "https://i.postimg.cc/7hg8msFv/anir.jpg",
   },
 ];
 
