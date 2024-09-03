@@ -7,7 +7,7 @@ import creator from "./creator.png";
 import mobile from "./mobile.png";
 import web from "./web.png";
 // work
-import ingskill from "./company/ingskill.png";
+import ingskill from "./company/ingSkill.png";
 import iic from "./company/iic.png";
 //skills
 import github from "./github.png";
