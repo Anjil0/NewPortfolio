@@ -6,6 +6,7 @@ import SectionWrapper from "../hoc/sectionWrapper";
 import { projects } from "../constants";
 import PropTypes from "prop-types";
 import { fadeIn, textVariant } from "../utils/motion";
+import { FaGlobe } from "react-icons/fa";
 
 const ProjectCard = ({
   index,
@@ -13,6 +14,7 @@ const ProjectCard = ({
   description,
   tags,
   image,
+  live_link,
   source_code_link,
 }) => {
   return (
@@ -38,6 +40,14 @@ const ProjectCard = ({
                 className="w-1/2 h-1/2 object-contain"
               />
             </div>
+            {live_link && (
+              <div
+                onClick={() => window.open(live_link, "_blank")}
+                className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer ml-2"
+              >
+                <FaGlobe className="text-white w-1/2 h-1/2" />
+              </div>
+            )}
           </div>
         </div>
         <div className="mt-5">
@@ -60,6 +70,7 @@ ProjectCard.propTypes = {
   index: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
+  live_link: PropTypes.string.isRequired,
   tags: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string.isRequired,

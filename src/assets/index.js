@@ -25,7 +25,7 @@ import tailwind from "./tech/tailwind.png";
 // projects
 import sonicpulse from "./sonicPulse.png";
 import foodServe from "./foodServe.png";
-import bonsaiGarden from "./bonsaiGarden.png";
+import chatBot from "./chatBot.png";
 
 export {
   logo,
@@ -51,5 +51,5 @@ export {
   tailwind,
   sonicpulse,
   foodServe,
-  bonsaiGarden,
+  chatBot,
 };

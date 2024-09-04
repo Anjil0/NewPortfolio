@@ -18,10 +18,10 @@ import {
   git,
   figma,
   docker,
-  bonsaiGarden,
   //projects
   sonicpulse,
   foodServe,
+  chatBot,
 } from "../assets";
 
 export const navLinks = [
@@ -206,25 +206,26 @@ const projects = [
     source_code_link: "https://github.com/Anjil0/SYP-Food-Serve",
   },
   {
-    name: "Bonsai Garden",
+    name: "Chat Bot",
     description:
-      "A user-friendly e-commerce website for bonsai plants, featuring product listings, discounts, and pages for home, blog, and research.",
+      "A sleek chatbot app built with Vite and the Gemini API, featuring a user-friendly interface for engaging with a bot powered by Google's Gemini language model.",
     tags: [
       {
-        name: "html",
+        name: "react",
         color: "blue-text-gradient",
       },
       {
-        name: "css",
+        name: "tailwind",
         color: "green-text-gradient",
       },
       {
-        name: "js",
+        name: "geminiAI",
         color: "pink-text-gradient",
       },
     ],
-    image: bonsaiGarden,
-    source_code_link: "https://github.com/Anjil0/HTML-and-CSS-1st-Project",
+    image: chatBot,
+    live_link: "https://mrchatbot.vercel.app/",
+    source_code_link: "https://github.com/Anjil0/ChatAI",
   },
 ];
 
