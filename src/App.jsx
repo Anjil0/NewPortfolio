@@ -8,6 +8,7 @@ import {
   Navbar,
   Tech,
   Works,
+  Footer,
   StarsCanvas,
 } from "./components";
 
@@ -33,6 +34,7 @@ const App = () => {
             <Contact />
             <StarsCanvas />
           </div>
+          <Footer />
         </div>
       </div>
     </BrowserRouter>
