@@ -5,41 +5,44 @@ import { styles } from "../style";
 import SectionWrapper from "../hoc/sectionWrapper";
 import { motion } from "framer-motion";
 import { slideIn } from "../utils/motion";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
 
-// eslint-disable-next-line react-refresh/only-export-components
+const validationSchema = Yup.object({
+  name: Yup.string()
+    .min(2, "Please, enter at least 2 characters.")
+    .required("Please, enter your name."),
+  email: Yup.string()
+    .email("Please, enter a valid email address.")
+    .required("Please, enter your email."),
+  message: Yup.string()
+    .min(10, "Please, enter at least 10 characters.")
+    .required("Please, enter your message."),
+});
+
 const Contact = () => {
   const formRef = useRef();
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
   const [loading, setLoading] = useState(false);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setForm({ ...form, [name]: value });
-  };
-
-  const userMessage = {
-    from_name: form.name,
-    to_name: "Anjil Neupane",
-    from_email: form.email,
-    to_email: "angilneupane222@gmail.com",
-    message: form.message,
-  };
-
-  const autoReply = {
-    to_name: form.name,
-    from_email: "angilneupane222@gmail.com",
-    from_name: "Anjil Neupane",
-    user_email: form.email,
-    reply_to: "angilneupane222@gmail.com",
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async (values, { resetForm }) => {
     setLoading(true);
+
+    const userMessage = {
+      from_name: values.name,
+      to_name: "Anjil Neupane",
+      from_email: values.email,
+      to_email: "angilneupane222@gmail.com",
+      message: values.message,
+    };
+
+    const autoReply = {
+      to_name: values.name,
+      from_email: "angilneupane222@gmail.com",
+      from_name: "Anjil Neupane",
+      user_email: values.email,
+      reply_to: "angilneupane222@gmail.com",
+    };
+
     emailjs
       .send(
         "service_09cvhpn",
@@ -60,7 +63,7 @@ const Contact = () => {
           } catch (error) {
             console.log("Auto-reply failed:", error);
           }
-          setForm({ name: "", email: "", message: "" });
+          resetForm();
           alert(
             "Thank you for your message. I will get back to you as soon as possible."
           );
@@ -84,60 +87,82 @@ const Contact = () => {
         <p className={styles.sectionSubText}>Get in touch</p>
         <h3 className={styles.sectionHeadText}>Contact.</h3>
 
-        <form
-          ref={formRef}
+        <Formik
+          initialValues={{ name: "", email: "", message: "" }}
+          validationSchema={validationSchema}
           onSubmit={handleSubmit}
-          className="flex flex-col gap-8 mt-12"
         >
-          <label className="flex flex-col">
-            <span className="text-white font-medium mb-4">Your Name</span>
-            <input
-              type="text"
-              name="name"
-              value={form.name}
-              onChange={handleChange}
-              placeholder="What's Your Name?"
-              className="bg-tertiary py-4 px-6 rounded-lg font-medium text-white outline-none placeholder:text-secondary"
-            />
-          </label>
-          <label className="flex flex-col">
-            <span className="text-white font-medium mb-4">Your Email</span>
-            <input
-              type="email"
-              name="email"
-              value={form.email}
-              onChange={handleChange}
-              placeholder="What's Your Email?"
-              className="bg-tertiary py-4 px-6 rounded-lg font-medium text-white outline-none placeholder:text-secondary"
-            />
-          </label>
-          <label className="flex flex-col">
-            <span className="text-white font-medium mb-4">Your Message</span>
-            <textarea
-              rows={4}
-              name="message"
-              value={form.message}
-              onChange={handleChange}
-              placeholder="What do you want to say?"
-              className="bg-tertiary py-4 px-6 rounded-lg font-medium text-white outline-none placeholder:text-secondary"
-            />
-          </label>
-          <div className="flex justify-center">
-            <motion.button
-              type="submit"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ duration: 0.15 }}
-              className="text-white bg-tertiary py-3 px-8 rounded-xl font-bold outline-none shadow-md shadow-primary"
-            >
-              {loading ? "Sending" : "Send"}
-            </motion.button>
-          </div>
-        </form>
+          {({ errors, touched }) => (
+            <Form ref={formRef} className="flex flex-col gap-8 mt-12">
+              <label className="flex flex-col">
+                <span className="text-white font-medium mb-4">Your Name</span>
+                <Field
+                  type="text"
+                  name="name"
+                  placeholder="What's Your Name?"
+                  className={`bg-tertiary py-4 px-6 rounded-lg font-medium text-white outline-none placeholder:text-secondary ${
+                    errors.name && touched.name ? "border-red-500" : ""
+                  }`}
+                />
+                <ErrorMessage
+                  name="name"
+                  component="div"
+                  className="text-red-500 mt-1 ml-3"
+                />
+              </label>
+              <label className="flex flex-col">
+                <span className="text-white font-medium mb-4">Your Email</span>
+                <Field
+                  type="email"
+                  name="email"
+                  placeholder="What's Your Email?"
+                  className={`bg-tertiary py-4 px-6 rounded-lg font-medium text-white outline-none placeholder:text-secondary ${
+                    errors.email && touched.email ? "border-red-500" : ""
+                  }`}
+                />
+                <ErrorMessage
+                  name="email"
+                  component="div"
+                  className="text-red-500 mt-1 ml-3"
+                />
+              </label>
+              <label className="flex flex-col">
+                <span className="text-white font-medium mb-4">
+                  Your Message
+                </span>
+                <Field
+                  as="textarea"
+                  rows={4}
+                  name="message"
+                  placeholder="What do you want to say?"
+                  className={`bg-tertiary py-4 px-6 rounded-lg font-medium text-white outline-none placeholder:text-secondary ${
+                    errors.message && touched.message ? "border-red-500" : ""
+                  }`}
+                />
+                <ErrorMessage
+                  name="message"
+                  component="div"
+                  className="text-red-500 mt-1 ml-3"
+                />
+              </label>
+              <div className="flex justify-center">
+                <motion.button
+                  type="submit"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={{ duration: 0.15 }}
+                  className="text-white bg-tertiary py-3 px-8 rounded-xl font-bold outline-none shadow-md shadow-primary"
+                >
+                  {loading ? "Sending" : "Send"}
+                </motion.button>
+              </div>
+            </Form>
+          )}
+        </Formik>
       </motion.div>
       <motion.div
         variants={slideIn("right", "tween", 0.2, 1)}
-        className="xl:flex-1 xl:h-auto md:h-[500px] h-350px"
+        className="xl:flex-1 xl:h-auto md:h-[500px] h-[350px]"
       >
         <EarthCanvas />
       </motion.div>
