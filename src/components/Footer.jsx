@@ -16,7 +16,7 @@ const Footer = () => {
             />
             <span className="mr-2 text-[25px] hidden sm:inline">|</span>
             <span className="text-2xl font-semibold whitespace-nowrap text-gray-800 dark:text-gray-200">
-              Mr. Hitman
+              Anjil Neupane
             </span>
           </a>
           <ul className="flex flex-wrap items-center mb-6 text-m font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
